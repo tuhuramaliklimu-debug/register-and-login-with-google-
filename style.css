@@ -1,0 +1,285 @@
+/* ─────────────────────────────────────────────
+   style.css  –  Shared Styles for All Pages
+   Save this file in: C:/xampp/htdocs/form/
+   ───────────────────────────────────────────── */
+
+/* Import a clean modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Reset & Base ── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ── Card (the white box holding the form) ── */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    animation: slideUp 0.4s ease;
+}
+
+/* Slide-up entrance animation */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── Logo / Icon at the top ── */
+.card-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+}
+
+/* ── Headings ── */
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+/* ── Form fields ── */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    background: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+/* Highlight the field the user is typing in */
+input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+    background: #fff;
+}
+
+/* ── Submit button ── */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:hover   { opacity: 0.92; transform: translateY(-1px); }
+.btn:active  { transform: translateY(0); }
+
+/* ── Alert messages ── */
+.alert {
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+
+.alert-error {
+    background: #ffeaea;
+    color: #d63031;
+    border: 1px solid #fab8b8;
+}
+
+.alert-success {
+    background: #eafff3;
+    color: #00b894;
+    border: 1px solid #b2f0d2;
+}
+
+/* ── Bottom link (e.g. "Already have an account?") ── */
+.switch-link {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 13px;
+    color: #888;
+}
+
+.switch-link a {
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.switch-link a:hover { text-decoration: underline; }
+
+/* ── Dashboard card (wider) ── */
+.dashboard-card {
+    max-width: 600px;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.dashboard-header h1 { text-align: left; margin-bottom: 0; }
+
+.logout-btn {
+    padding: 8px 20px;
+    background: #ff6b6b;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover { background: #e55252; }
+
+/* ── Info grid (dashboard details) ── */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.info-box {
+    background: #f7f8fc;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #e8e8e8;
+}
+
+.info-box .info-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #aaa;
+    margin-bottom: 4px;
+}
+
+.info-box .info-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+    word-break: break-all;
+}
+
+/* ── "or" Divider ── */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 18px 0;
+    color: #ccc;
+    font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.divider span {
+    padding: 0 12px;
+    color: #aaa;
+    font-weight: 500;
+}
+
+/* ── Google Sign-In Button ── */
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 16px;
+    background: #fff;
+    color: #3c4043;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.1s;
+    margin-bottom: 4px;
+}
+
+.btn-google:hover {
+    background: #f8f9ff;
+    border-color: #667eea;
+    box-shadow: 0 2px 12px rgba(102, 126, 234, 0.15);
+    transform: translateY(-1px);
+}
+
+.btn-google:active { transform: translateY(0); }
+
+/* ── Mobile responsive ── */
+@media (max-width: 480px) {
+    .card { padding: 28px 20px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .dashboard-header { flex-direction: column; align-items: flex-start; }
+}
